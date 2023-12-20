@@ -91,15 +91,35 @@ header>.container {
     font-weight: 500;
     letter-spacing: 0.02em;
     padding: 24px 0 24px;
+    color: #2E2F42;
+
+    position: relative;
+
+    transition: color, 0.5s, ease, 0s;
 }
 
-.nav-list:hover {
+.nav-list.active {
     color: #404bbf;
 }
 
+.nav-list.active::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    
+
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background:#404BBF;
+}
+
+.nav-list:hover,
 .nav-list:focus {
     color: #404bbf;
 }
+
 
 .d-flex>.logo {
     margin-right: 76px;
@@ -110,9 +130,6 @@ header>.container {
     gap: 40px;
 }
 
-.nav-menu>li>a {
-    color: #2E2F42;
-}
 
 .nav-addres {
     font-style: normal;
@@ -128,6 +145,7 @@ header>.container {
     line-height: 24px;
     letter-spacing: 0.32px;
     padding: 24px 0 24px;
+    transition: color, 0.5s, ease, 0s;
 }
 
 .nav-addres-list:hover,:focus {
@@ -164,6 +182,10 @@ header>.container {
     background-color: #2E2F42;
     flex-shrink: 0;
     padding: 188px 0 188px;
+    background-image:linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office\ 1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .main-effective-header {
@@ -199,6 +221,8 @@ header>.container {
     height: 56px;
     border: none;
     border-radius: 4px;
+
+    transition: background-color, 0.5s, ease, 0s;
     }
 
 .main-effective-button:hover,:focus {
@@ -211,12 +235,7 @@ header>.container {
     flex-shrink: 0;
     padding: 120px 0 120px;
 }
-/*
-.values {
-    padding-top: 120px;
-    padding-bottom: 120px;
-}
-*/
+
 .values-list {
     gap: 24px;
 }
@@ -225,12 +244,6 @@ header>.container {
 width: calc((100% - 72px)/4);
 }
 
-/*
-.main-values-header {
-    //display: none;
-    .visually-hidden
-}
-*/
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -245,7 +258,14 @@ width: calc((100% - 72px)/4);
     overflow: hidden;
   }
 
-
+.values-wraper {
+  text-align: center;
+  padding: 24px 100px;
+  border-radius: 4px;
+  border: 1px solid #8E8F99;
+  background: #F4F4FD;
+  margin-bottom: 8px;
+}
 /*Team*/
 
 .team {
@@ -279,6 +299,8 @@ width: calc((100% - 72px)/4);
 
 .main-names {
     margin-bottom: 8px;
+}
+.team-collection>.main-names {
     text-align: center;
 }
 
@@ -291,6 +313,41 @@ width: calc((100% - 72px)/4);
 
 .main-text{
     font-size: 16px;
+}
+
+.reviews-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.reviews-elem {
+    width: 40px;
+    height: 40px;
+}
+
+.reviews-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #F4F4FD;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+
+    transition: background-color, 0.5s, ease, 0s;
+}
+
+.reviews-link:hover,
+.reviews-link:focus {
+    background-color: #404bbf;
+}
+
+.reviews-icon {
+    fill: currentColor;
 }
 
 /* Portfolio*/
@@ -313,7 +370,34 @@ width: calc((100% - 72px)/4);
     row-gap: 48px;
 }
 
+.overlai-text {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+padding: 40px 32px;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: scroll;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+color: #f4f4fd;
+background-color: #4d5ae5;
+transform: translateY(100%);
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.overlay-block {
+position: relative;
+    overflow: hidden;
+}
+
+.portfolio-collection:hover .overlai-text {
+    transform: translateY(0);
+}
 /*footer*/
 
 footer {
@@ -353,4 +437,45 @@ footer {
     font-weight: 400;
     line-height: 24px; /* 150% */
     letter-spacing: 0.32px;
+}
+
+.footer-bottom {
+    display: flex;
+}
+
+.bottom {
+    width: 264px;
+    margin-right: 120px;
+}
+
+.footer-socials {
+    width: 208px;
+}
+
+.footer-social {
+    color: #FFF;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.footer-socials>.reviews-items {
+    gap: 16px;
+}
+
+.footer-reviews-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #F4F4FD;
+    background-color: #4d5ae5;
+    border-radius: 50%;
+
+    transition: background-color, 0.5s, ease, 0s;
+}
+
+.footer-reviews-link:hover,
+.footer-reviews-link:focus {
+    background-color: #31D0AA;
 }
